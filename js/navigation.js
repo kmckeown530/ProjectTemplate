@@ -20,11 +20,60 @@
     });
   });
 
-  function showCarDetails() {
+  function showCarDetails(){
+
+    //$("#dvCarDetails").show();
+
+    //$("#dvPersonalDetails").hide();
+    validateshowCarDetails();
+
+
       
     // Hide the personal details section (dvPersonalDetails)
     // Hide the quote section (dvQuoteDetails)
     // Show the car details section (dvCarDetails)
+
+  }
+
+  function validateshowCarDetails(){
+    var name = $('#txtName').val();
+    var age = $('#txtAge').val();
+    var towncity = $('#txtTownCity').val();
+    var emailaddress = $('#txtEmailAddress').val();
+    var yearsnoclaimsbonus = $('#txtYearsNoClaimsBonus').val();
+    var genderMale = $('#genderMale').prop('checked')
+    var genderFemale = $('#genderFemale').prop('checked')
+
+
+    console.log(yearsnoclaimsbonus);
+
+    var isValid = true;
+
+    if(name == ""){
+      isValid =false;
+    } 
+    if(age == "" && age<18){
+      isValid =false;
+    } 
+    if(towncity == ""){
+      isValid =false;
+    } 
+    if(emailaddress == ""){
+      isValid =false;
+    } 
+        if(yearsnoclaimsbonus == ""){
+      isValid =false;
+    } 
+    if(genderMale==false && genderFemale==false){
+      isValid=false
+    }
+    if (isValid==true){
+        $("#dvCarDetails").show();
+        $("#dvPersonalDetails").hide();
+    } else {
+      $("#dvPersonalDetailsAlert").show();
+    }
+
 
   }
 
@@ -41,10 +90,11 @@
   }
 
   function getQuote() {
+    
 
     // Perform validation to test that all data has been entered
 
-    if (/* Page is Valid */)
+    if (true)
     {
 
       // Get the values from the page elements that you need to create your JSON
@@ -59,6 +109,7 @@
           // Display the quote details page
       });
   }
+}
 
 //################################# Helper Functions - look at these when validating and changing section #########################################
 
