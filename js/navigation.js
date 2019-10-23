@@ -21,10 +21,9 @@
   });
 
   function showCarDetails(){
-
-    //$("#dvCarDetails").show();
-
-    //$("#dvPersonalDetails").hide();
+  $("#dvCarDetails").show();
+  $("#dvPersonalDetails").hide();
+  $("#dvQuoteDetails").hide();
     validateshowCarDetails();
 
 
@@ -52,7 +51,7 @@
     if(name == ""){
       isValid =false;
     } 
-    if(age == "" && age<18){
+    if(age == "" && age =="<18"){
       isValid =false;
     } 
     if(towncity == ""){
@@ -67,23 +66,63 @@
     if(genderMale==false && genderFemale==false){
       isValid=false
     }
-    if (isValid==true){
+    if (true){
         $("#dvCarDetails").show();
         $("#dvPersonalDetails").hide();
     } else {
       $("#dvPersonalDetailsAlert").show();
     }
-
-
   }
 
+
   function showPersonalDetails() {
+        $("#dvCarDetails").hide();
+        $("#dvPersonalDetails").show();
+        $("#dvQuoteDetails").hide();
       // Hide the car details section (dvCarDetails)
       // Hide the quote section (dvQuoteDetails)
       // Show the personal details section (dvPersonalDetails)
   }
 
   function showQuoteDetails() {
+
+    validateshowQuoteDetails();
+  }
+  function validateshowQuoteDetails(){
+    var manufacturer = $('#txtManufacturer').val();
+    var model = $('#txtModel').val();
+    var carage = $('#txtCarAge').val();
+    var enginesize = $('#txtEngineSize').val();
+    var storage = $('#txtStorage').val();
+    var estimatedvalue = $('#txtEstimatedValue').val();
+
+    var isValid = true;
+
+    if(manufacturer == ""){
+      isValid =false;
+    } 
+    if(model == ""){
+      isValid =false;
+    }
+    if(carage == ""){
+      isValid =false;
+    } 
+    if(enginesize == ""){
+      isValid =false;
+    } 
+    if(storage == ""){
+      isValid =false;
+    } 
+    if(estimatedvalue == ""){
+      isValid =false;
+    }
+    if (isValid==true){
+        $("#dvCarDetails").hide();
+        $("#dvPersonalDetails").hide();
+        $("#dvQuoteDetails").show();
+    } else {
+      $("#dvCarDetailsAlert").show();
+    }
       // Hide the car details section (dvCarDetails)
       // Hide the personal details section (dvQuoteDetails)
       // Show the quote section (dvPersonalDetails)
