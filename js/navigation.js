@@ -66,7 +66,7 @@
     if(genderMale==false && genderFemale==false){
       isValid=false
     }
-    if (true){
+    if (isValid =true){
         $("#dvCarDetails").show();
         $("#dvPersonalDetails").hide();
     } else {
